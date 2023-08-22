@@ -1,15 +1,16 @@
 import { useTicket } from '@/hook/useTicket'
+import { Button } from '../Button/Button'
 
 export const Download = () => {
   const { ticketUrl } = useTicket()
 
   return (
     <>
-      <p>Right</p>
+      <h2 className="text-lg pb-2 uppercase">Ticket gerado com sucesso</h2>
 
-      <a href={ticketUrl} download>
-        Download
-      </a>
+      <Button as="a" href={ticketUrl} download>
+        Fazer download
+      </Button>
     </>
   )
 }
