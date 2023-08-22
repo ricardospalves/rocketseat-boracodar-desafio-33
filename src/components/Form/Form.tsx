@@ -5,6 +5,7 @@ import { useContext, useId } from 'react'
 import { useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import { Button } from '../Button/Button'
+import { UsernameFieldText } from './UsernameFieldText'
 
 type User = AppContextData['user']
 
@@ -20,6 +21,7 @@ const schema = yup
 
 export const Form = () => {
   const fieldId = useId()
+  const helperTextId = useId()
   const { handleUserChange } = useContext(AppContext)
   const {
     register,
@@ -29,6 +31,7 @@ export const Form = () => {
   } = useForm<FormFields>({
     resolver: yupResolver(schema),
   })
+  const hasError = Boolean(errors?.username)
 
   const onSubmit = async ({ username }: FormFields) => {
     const response = await fetch(`https://api.github.com/users/${username}`)
@@ -53,16 +56,19 @@ export const Form = () => {
           Digite seu usuário do GitHub
         </label>
 
-        <input
-          type="text"
+        <UsernameFieldText
           id={fieldId}
-          className="block w-full h-12 px-4 bg-white text-black focus:outline-none focus:ring ring-purple-700"
+          aria-invalid={hasError ? true : undefined}
+          aria-describedby={hasError ? helperTextId : undefined}
+          error={hasError}
           autoFocus
           {...register('username')}
         />
 
         {errors?.username && (
-          <p className="mt-1 text-red-400">{errors.username.message}</p>
+          <p id={helperTextId} className="mt-1 text-red-400">
+            {errors.username.message}
+          </p>
         )}
 
         <Button as="button" type="submit" className="mt-4">
