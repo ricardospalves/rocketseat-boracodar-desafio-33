@@ -27,7 +27,7 @@ export const Form = () => {
     register,
     handleSubmit,
     setError,
-    formState: { errors },
+    formState: { errors, isLoading, isSubmitting },
   } = useForm<FormFields>({
     resolver: yupResolver(schema),
   })
@@ -71,7 +71,12 @@ export const Form = () => {
           </p>
         )}
 
-        <Button as="button" type="submit" className="mt-4">
+        <Button
+          as="button"
+          type="submit"
+          className="mt-4"
+          loading={isLoading || isSubmitting}
+        >
           Gerar meu ticket
         </Button>
       </form>
