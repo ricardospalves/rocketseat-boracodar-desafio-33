@@ -7,7 +7,7 @@ export const Avatar = () => {
   return (
     <div className="flex justify-center">
       <img
-        src={user?.avatar_url ?? 'https://picsum.photos/128'}
+        src={user?.avatar_url ?? './images/avatar.jpg'}
         className="w-32 h-32 shrink-0 rounded-full"
         alt=""
       />
