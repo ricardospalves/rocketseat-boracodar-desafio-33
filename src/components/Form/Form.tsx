@@ -52,10 +52,7 @@ export const Form = () => {
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <label
-          htmlFor={fieldId}
-          className="block text-lg pb-2 uppercase font-heading"
-        >
+        <label htmlFor={fieldId} className="block text-lg pb-2 uppercase">
           Digite seu usuário do GitHub
         </label>
 

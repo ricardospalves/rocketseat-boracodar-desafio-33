@@ -19,7 +19,7 @@ export const Ticket = () => {
       <div className="col-span-5 p-4 bg-white text-black">
         <Avatar />
 
-        <h3 className="mt-2 text-sm uppercase text-center text-purple-700 font-heading">
+        <h3 className="mt-2 text-sm uppercase text-center text-purple-700">
           Tripulante
         </h3>
 
