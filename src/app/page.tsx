@@ -1,7 +1,7 @@
 'use client'
 
 import { AppContextProvider } from '@/context/AppContext/AppContext'
-import { HomePage } from '@/pages/Home'
+import { HomePage } from '@/page/Home'
 
 export default function Home() {
   return (
