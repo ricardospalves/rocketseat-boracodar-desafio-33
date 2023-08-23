@@ -8,9 +8,9 @@ export const HomePage = () => {
   const { user } = useContext(AppContext)
 
   return (
-    <main className="max-w-6xl mx-auto min-h-screen items-center grid gap-4 lg:grid-cols-12">
+    <main className="max-w-6xl mx-auto items-center grid gap-4 lg:grid-cols-12">
       <div className="lg:col-span-4">
-        <h1 className="max-w-lg lg:max-w-none mx-auto text-center lg:text-left uppercase text-4xl mb-8">
+        <h1 className="max-w-lg lg:max-w-none mx-auto mb-8 font-heading text-center lg:text-left uppercase text-4xl">
           Gere seu ticket e compartilhe com o mundo
         </h1>
 

@@ -22,7 +22,7 @@ const EVENT_DATA: EventItem[] = [
 
 export const Event = () => {
   return (
-    <dl className="grid grid-cols-2 mt-9 text-xs font-bold">
+    <dl className="grid grid-cols-2 mt-9 text-xs font-bold font-heading uppercase">
       {EVENT_DATA.map(({ description, title }) => {
         return (
           <Fragment key={title}>
